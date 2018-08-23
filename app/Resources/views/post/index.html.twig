@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!-- posts -->
+    <section>
+        <div class="container">
+            <div class="row">
+                {% for post in posts %}
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="content">
+                            <div class="in-content">
+                                <h4><a href="{{ path('post', {'id':  post.id}) }}">{{ post.title }}</a></h4>
+                                <div>
+                                    <a href="#"><i class="fa fa-user"></i> By: {{ post.author }}</a>
+                                </div>
+                                <p>{{ post.content|slice(0, 250) }}...</p>
+                                <div>
+                                    <a href="{{ path('post', {'id':  post.id}) }}" class="btn btn-default">Read More <i
+                                                class="fa fa-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!--/ End posts -->
+{% endblock %}

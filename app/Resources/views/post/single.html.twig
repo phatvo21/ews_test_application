@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <!-- post Single -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-12">
+                    <div class="container">
+                        <div class="post">
+                            <a href="#"><i class="fa fa-user"></i>By: {{ post.author }}</a>
+                            <a href="#"><i class="fa fa-calendar"></i> {{ post.created|date('Y-m-d') }}</a>
+                        </div>
+                        <h2><a href="#">{{ post.title }}</a></h2>
+                        <p>{{ post.content }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!--/ End post Single -->
+{% endblock %}
